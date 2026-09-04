@@ -5,13 +5,12 @@ import "./login.css";
 export default function Login() {
   const {
     email,
-    setEmail,
     password,
-    setPassword,
     errors,
-    setErrors,
     status,
     handleSubmit,
+    handleEmailChange,
+    handlePasswordChange
   } = useLoginViewModel();
 
   return (
@@ -46,10 +45,7 @@ export default function Login() {
                   id="email"
                   placeholder="name@domain.com"
                   value={email}
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                    if (errors.email) setErrors((prev) => ({ ...prev, email: "" }));
-                  }}
+                  onChange={(e) => handleEmailChange(e.target.value)}
                 />
               </div>
               {errors.email && (
@@ -84,10 +80,7 @@ export default function Login() {
                   id="password"
                   placeholder="••••••••"
                   value={password}
-                  onChange={(e) => {
-                    setPassword(e.target.value);
-                    if (errors.password) setErrors((prev) => ({ ...prev, password: "" }));
-                  }}
+                  onChange={(e) => handlePasswordChange(e.target.value)}
                 />
               </div>
               {errors.password && (
