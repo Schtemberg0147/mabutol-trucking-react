@@ -25,7 +25,7 @@ export default function Login() {
             </svg>
           </div>
           <h1>TANAW</h1>
-          {status && (
+          {status === "success" && (
             <div className="tanaw-toast">
               <div className="toast-check">
                 ✓
