@@ -1,3 +1,4 @@
+import LoginSuccessToast from "../../components/Toast/loginsuccesstoast";
 import { useLoginViewModel } from "../../viewmodels/LoginViewModel";
 import "./login.css";
 
@@ -25,18 +26,7 @@ export default function Login() {
             </svg>
           </div>
           <h1>TANAW</h1>
-          {status === "success" && (
-            <div className="tanaw-toast">
-              <div className="toast-check">
-                ✓
-            </div>
-
-            <div className="toast-content">
-              <h4>Login Successful</h4>
-              <p>Redirecting to dashboard...</p>
-            </div>
-          </div>
-          )}
+          {status === "success" && <LoginSuccessToast/>}
         </div>
 
         {/* Auth Card */}
